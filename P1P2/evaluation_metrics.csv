@@ -1,0 +1,2 @@
+precision,recall,f1_score,ndcg
+0.6666666666666666,1.0,0.8,1.0
