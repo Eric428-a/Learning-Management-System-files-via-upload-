@@ -1,4 +1,4 @@
-# README for LMS Projects Repository
+# LMS Projects Repository
 
 """
 Learning Management System (LMS)
