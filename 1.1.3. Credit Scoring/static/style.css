@@ -1,0 +1,72 @@
+/* Global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+/* Headings and text */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}

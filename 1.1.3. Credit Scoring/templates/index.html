@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Scoring Model</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="/static/logo.png" alt="Logo" class="logo">
+
+    <h1>Credit Scoring Model</h1>
+    <p>Paste JSON below or use the sample and click <strong>Predict</strong></p>
+
+    <form id="scoreForm">
+      <textarea id="jsonInput" rows="12">
+{
+  "data": [
+    {
+      "status": "A11",
+      "duration": 12,
+      "credit_history": "A34",
+      "purpose": "A43",
+      "amount": 5000,
+      "savings": "A61",
+      "employment_duration": "A74",
+      "installment_rate": 4,
+      "personal_status_sex": "A93",
+      "other_debtors": "A101",
+      "present_residence": 2,
+      "property": "A121",
+      "age": 35,
+      "other_installment_plans": "A143",
+      "housing": "A152",
+      "number_credits": 1,
+      "job": "A173",
+      "people_liable": 1,
+      "telephone": "A192",
+      "foreign_worker": "A201"
+    }
+  ]
+}
+      </textarea>
+      <br>
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    document.getElementById("scoreForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const raw = document.getElementById("jsonInput").value;
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "Loading...";
+      try {
+        const resp = await fetch("/predict", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: raw
+        });
+        const data = await resp.json();
+
+        // color highlight based on prediction
+        const pred = data.predictions[0];
+        const prob = data.probabilities[0].toFixed(3);
+        const color = pred === 1 ? "green" : "red";
+        resultDiv.innerHTML = `<strong>Prediction:</strong> <span style="color:${color}">${pred === 1 ? "Creditworthy" : "Risky"}</span><br>
+                               <strong>Probability:</strong> ${prob}`;
+      } catch (err) {
+        resultDiv.innerHTML = `<span style="color:red;">Error: ${err}</span>`;
+      }
+    });
+  </script>
+</body>
+</html>
