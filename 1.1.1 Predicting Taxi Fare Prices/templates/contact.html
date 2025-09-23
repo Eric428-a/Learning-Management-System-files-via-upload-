@@ -1,0 +1,26 @@
+<!-- templates/contact.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Contact Us</h2>
+<form>
+  <div class="mb-2">
+    <label>Name:</label>
+    <input type="text" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Email:</label>
+    <input type="email" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Message:</label>
+    <textarea class="form-control" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+<h3 class="mt-4">Links</h3>
+<ul>
+  <li>Email: <a href="mailto:ericmwanii2004@gmail.com">ericmwanii2004@gmail.com</a></li>
+  <li>GitHub: <a href="https://github.com/Ignitus" target="_blank">GitHub</a></li>
+  <li>LinkedIn: <a href="https://www.linkedin.com/in/eric-m-1325902b2" target="_blank">LinkedIn</a></li>
+</ul>
+{% endblock %}

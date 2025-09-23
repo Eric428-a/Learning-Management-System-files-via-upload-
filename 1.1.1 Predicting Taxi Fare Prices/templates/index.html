@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style="width:100%; height:50vh; overflow:hidden;">
+  <div class="carousel-inner h-100">
+    <div class="carousel-item active h-100">
+      <img src="{{ url_for('static', filename='slides/prediction1.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide1">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="{{ url_for('static', filename='slides/prediction2.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide2">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="{{ url_for('static', filename='slides/prediction3.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide3">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="{{ url_for('static', filename='slides/prediction4.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide4">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="{{ url_for('static', filename='slides/prediction5.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide5">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="{{ url_for('static', filename='slides/prediction6.jpg') }}" class="d-block w-100 h-100" style="object-fit: cover; object-position: center;" alt="slide6">
+    </div>
+  </div>
+</div>
+
+<h2 class="text-center mt-4">Welcome to 1.1.1 Predicting Taxi Fare Prices</h2>
+<p class="text-center">Predict taxi fares instantly using our machine learning model.</p>
+{% endblock %}

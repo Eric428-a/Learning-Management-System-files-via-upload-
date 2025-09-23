@@ -1,0 +1,13 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>About This Project</h2>
+<p>This project predicts NYC taxi fares using machine learning. A RandomForestRegressor model was trained on the NYC Taxi dataset.</p>
+<h3>Methodology</h3>
+<ul>
+  <li>Feature engineering: Extracted datetime features (hour, day, month).</li>
+  <li>Calculated distance using Haversine formula.</li>
+  <li>Filtered outliers and cleaned the dataset.</li>
+  <li>Trained RandomForestRegressor on processed data.</li>
+</ul>
+{% endblock %}

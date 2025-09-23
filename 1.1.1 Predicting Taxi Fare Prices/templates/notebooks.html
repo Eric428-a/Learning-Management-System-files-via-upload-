@@ -1,0 +1,11 @@
+<!-- templates/notebooks.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4">Jupyter Notebook</h2>
+  <p>You can view the training notebook below:</p>
+  <a href="{{ url_for('static', filename='notebooks/taxi_fare_prediction.html') }}" target="_blank" class="btn btn-outline-primary">
+    📄 Open Notebook
+  </a>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!-- templates/prediction.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Make a Prediction</h2>
+<form method="POST" class="mb-3">
+  <div class="mb-2">
+    <label>Distance (miles):</label>
+    <input type="number" step="0.01" name="distance_miles" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Passenger Count:</label>
+    <input type="number" name="passenger_count" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Hour of Day (0-23):</label>
+    <input type="number" name="hour_of_day" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Day of Week (0=Monday, 6=Sunday):</label>
+    <input type="number" name="day_of_week" class="form-control" required>
+  </div>
+  <div class="mb-2">
+    <label>Month (1-12):</label>
+    <input type="number" name="month" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Predict</button>
+</form>
+{% if prediction_result %}
+  <h4>{{ prediction_result }}</h4>
+{% endif %}
+{% endblock %}
