@@ -1,0 +1,50 @@
+# templates/base.html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>House Price Prediction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+  <a class="navbar-brand" href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" style="height:32px;margin-right:6px;">
+    House Price Predictor
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('notebooks') }}">Notebooks</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('datasets') }}">Datasets</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('tutorial') }}">Tutorial</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<main class="container mt-5 pt-3">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="mt-auto py-3 bg-light text-center">
+<p>© 2025 Eric Mwaniki • House Price Prediction</p>
+<p>
+<a href="{{ url_for('contact') }}">Contact</a> • 
+<a href="{{ github_link }}" target="_blank">GitHub</a> • 
+<a href="{{ linkedin_link }}" target="_blank">LinkedIn</a>
+</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

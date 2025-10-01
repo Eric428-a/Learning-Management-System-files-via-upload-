@@ -1,0 +1,30 @@
+/* static/css/styles.css */
+body {
+  background-color: #f8f9fb;
+  color: #222;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand img {
+  margin-right: 8px;
+}
+
+.card {
+  box-shadow: 0 6px 18px rgba(29, 33, 41, 0.06);
+  border-radius: 6px;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.carousel-item img {
+  border-radius: 6px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}

@@ -1,0 +1,9 @@
+<!-- templates/tutorial.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Video Tutorial</h2>
+<div class="ratio ratio-16x9">
+  <iframe src="{{ video_embed }}" title="Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="mt-3">Original video: <a href="{{ video_raw }}" target="_blank">Watch Tutorial</a></p>
+{% endblock %}

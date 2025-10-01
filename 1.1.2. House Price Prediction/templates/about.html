@@ -1,0 +1,58 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5" style="font-family: Georgia, serif;">
+  <h2 class="mb-4">About This Project</h2>
+
+  <section class="mb-5">
+    <h4 class="text-muted" style="font-style: italic; opacity: 0.7;">Project Overview</h4>
+    <p>
+      The <strong>House Price Predictor</strong> is designed to estimate housing prices based on 
+      critical features such as square footage, location, number of bedrooms, and amenities. 
+      By leveraging machine learning models, the tool helps individuals, developers, 
+      and investors make data-driven real estate decisions. 
+    </p>
+  </section>
+
+  <section class="mb-5">
+    <h4 class="text-muted" style="font-style: italic; opacity: 0.7;">Objectives</h4>
+    <ul>
+      <li>Provide accurate and reliable housing price predictions.</li>
+      <li>Support students, researchers, and professionals with accessible ML tools.</li>
+      <li>Encourage transparency by making datasets and models openly available.</li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h4 class="text-muted" style="font-style: italic; opacity: 0.7;">Methodology</h4>
+    <p>
+      The predictor is powered by a regression-based machine learning pipeline. 
+      The dataset was preprocessed to handle missing values, normalize numerical features, 
+      and encode categorical variables. 
+      After experimenting with multiple models, the final pipeline was optimized and saved 
+      using <code>joblib</code> for deployment. 
+    </p>
+  </section>
+
+  <section class="mb-5">
+    <h4 class="text-muted" style="font-style: italic; opacity: 0.7;">Technologies Used</h4>
+    <ul>
+      <li><strong>Python</strong> – data processing & model building</li>
+      <li><strong>Pandas, NumPy</strong> – feature engineering</li>
+      <li><strong>Scikit-learn</strong> – machine learning pipeline</li>
+      <li><strong>Flask</strong> – backend framework for deployment</li>
+      <li><strong>HTML, CSS, JS</strong> – frontend design</li>
+      <li><strong>Kaggle dataset</strong> – training data</li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h4 class="text-muted" style="font-style: italic; opacity: 0.7;">Developer</h4>
+    <p>
+      Created by <strong>Eric Mwaniki</strong>, a civil engineer and data science enthusiast, 
+      who combines a passion for technology with real-world problem solving. 
+      This project reflects a blend of engineering, design, and applied machine learning.
+    </p>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+# templates/prediction.html
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <h2>House Price Prediction</h2>
+    {% if model_warning %}
+      <div class="alert alert-warning">{{ model_warning }}</div>
+    {% endif %}
+    <form method="POST" action="{{ url_for('prediction') }}">
+      <div class="mb-3">
+        <label for="MSSubClass" class="form-label">MSSubClass</label>
+        <input type="number" class="form-control" id="MSSubClass" name="MSSubClass" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="MSZoning" class="form-label">MSZoning</label>
+        <select class="form-select" id="MSZoning" name="MSZoning" required>
+          <option value="">-- select --</option>
+          <option value="RL">RL</option>
+          <option value="RM">RM</option>
+          <option value="C (all)">C (all)</option>
+          <option value="FV">FV</option>
+          <option value="RH">RH</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="LotFrontage" class="form-label">LotFrontage</label>
+        <input type="number" class="form-control" id="LotFrontage" name="LotFrontage">
+      </div>
+
+      <div class="mb-3">
+        <label for="LotArea" class="form-label">LotArea</label>
+        <input type="number" class="form-control" id="LotArea" name="LotArea" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="Street" class="form-label">Street</label>
+        <select class="form-select" id="Street" name="Street" required>
+          <option value="">-- select --</option>
+          <option value="Pave">Pave</option>
+          <option value="Grvl">Gravel</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+  </div>
+
+  <div class="col-md-4">
+    {% if prediction %}
+      <div class="alert alert-success mt-3">
+        <h4>Predicted Price</h4>
+        <p>${{ "{:,.2f}".format(prediction) }}</p>
+        {% if chart_url %}
+          <img src="{{ chart_url }}" class="img-fluid mt-2" alt="Prediction Chart">
+        {% endif %}
+        {% if house_image %}
+          <img src="{{ house_image }}" class="img-fluid mt-2" alt="House Image">
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
