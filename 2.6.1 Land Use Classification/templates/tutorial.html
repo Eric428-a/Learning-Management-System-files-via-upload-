@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Tutorial{% endblock %}
+{% block content %}
+
+<section class="container mt-5 mb-5">
+  <div class="text-center mb-4">
+    <h2 class="display-6 fw-bold text-primary">Model Training & Deployment Tutorial</h2>
+    <p class="text-muted">Watch how our Land Use Classification model was trained, evaluated, and deployed.</p>
+  </div>
+
+  <div class="ratio ratio-16x9 mb-4 shadow-lg rounded">
+    <!-- Correct YouTube embed link -->
+    <iframe 
+      src="https://www.youtube.com/embed/5BNHcLDeirs?si=etb_zEqlQdIZm8rK"
+      title="Land Use Classification Tutorial"
+      allowfullscreen
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+    </iframe>
+  </div>
+
+  <div class="mt-4 text-center">
+    <p class="lead">
+      You can also explore the full training notebook below or check out the dataset used in this project.
+    </p>
+    <a href="{{ url_for('notebooks') }}" class="btn btn-primary mx-2">View Notebook</a>
+    <a href="{{ url_for('datasets') }}" class="btn btn-outline-secondary mx-2">View Dataset</a>
+  </div>
+</section>
+
+{% endblock %}

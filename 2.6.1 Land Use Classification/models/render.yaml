@@ -1,0 +1,7 @@
+# render.yaml - optional convenience config for Render
+services:
+  - type: web
+    name: landuse-web-service
+    env: python
+    plan: free
+    # start_command: uvicorn app:app --host 0.0.0.0 --port $PORT

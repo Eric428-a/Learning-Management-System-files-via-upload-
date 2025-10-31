@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Image Prediction{% endblock %}
+{% block content %}
+
+<section class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Land Use Classification</h1>
+    <p class="lead text-muted">
+      Upload a satellite image to predict its land use category using our lightweight CNN model.
+    </p>
+  </div>
+
+  <div class="row justify-content-center align-items-start g-5">
+    <!-- Upload Section -->
+    <div class="col-md-5">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+        <div class="card-body text-center">
+          <h4 class="fw-semibold text-secondary mb-4">Upload Image</h4>
+
+          <form action="/predict" enctype="multipart/form-data" method="post">
+            <div class="mb-3">
+              <input class="form-control form-control-lg rounded-pill" type="file" name="file" accept="image/*" required>
+            </div>
+            <button class="btn btn-primary btn-lg px-4 py-2 rounded-pill" type="submit">
+              Predict
+            </button>
+          </form>
+
+          {% if error %}
+          <div class="alert alert-danger mt-4 text-start">
+            <strong>Error:</strong>
+            <pre class="small text-danger mb-0">{{ error }}</pre>
+          </div>
+          {% endif %}
+
+          <p class="text-muted mt-3 small">
+            Supported formats: <strong>JPEG, PNG</strong><br>
+            Optimal input size: <strong>64×64</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+        <div class="card-body text-center">
+          <h4 class="fw-semibold text-secondary mb-4">Prediction Result</h4>
+
+          {% if result %}
+            <div class="card shadow-sm border-0 rounded-4 mb-4">
+              <img src="{{ result.filename }}" 
+                   class="card-img-top rounded-top-4" 
+                   style="max-height:360px; object-fit:contain;" 
+                   alt="Uploaded Image Preview">
+              <div class="card-body">
+                <h5 class="card-title mb-2">Prediction: 
+                  <strong class="text-success">{{ result.class }}</strong>
+                </h5>
+                <p class="card-text mb-3">Confidence: 
+                  <strong>{{ (result.score * 100) | round(2) }}%</strong>
+                </p>
+                <a href="/prediction" class="btn btn-outline-primary rounded-pill px-4">
+                  Try Another Image
+                </a>
+              </div>
+            </div>
+          {% else %}
+            <div class="text-muted py-5">
+              <p class="fs-5 mb-0">No prediction yet — upload an image at left to get started.</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="/notebooks" class="btn btn-outline-primary px-4 py-2 rounded-pill shadow-sm">
+      View Training Notebook
+    </a>
+  </div>
+
+  <footer class="text-center text-muted small mt-5">
+    © LandUseLab — Lightweight CNN • Input 64×64 • 10 Classes
+  </footer>
+</section>
+
+{% endblock %}

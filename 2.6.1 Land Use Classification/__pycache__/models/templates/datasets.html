@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Dataset{% endblock %}
+{% block content %}
+
+<section class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Dataset Overview</h1>
+    <p class="lead text-muted">
+      This project is powered by the <strong>EuroSAT RGB dataset</strong> — a benchmark dataset for land use and land cover classification derived from Sentinel-2 satellite imagery.
+    </p>
+  </div>
+
+  <!-- Dataset Description -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-10">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-5">
+          <h4 class="fw-semibold text-secondary mb-3">About the Dataset</h4>
+          <p class="text-muted fs-5 mb-4">
+            The EuroSAT RGB dataset contains <strong>27,000+</strong> labeled satellite images across 
+            <strong>10 land use categories</strong> — including Residential, Industrial, River, Forest, and Highway.
+            Each image represents a <strong>64×64 RGB tile</strong> sourced from Sentinel-2 data, capturing rich spatial and spectral patterns.
+          </p>
+
+          <div class="row text-center">
+            <div class="col-md-4 mb-4">
+              <div class="bg-light rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold text-primary">10 Classes</h5>
+                <p class="small text-muted mb-0">Urban, Agricultural, Forest, River, Industrial, and more.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="bg-light rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold text-primary">64×64 RGB</h5>
+                <p class="small text-muted mb-0">Standardized for lightweight CNN training.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="bg-light rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold text-primary">27,000+ Images</h5>
+                <p class="small text-muted mb-0">Curated and balanced for diverse land use coverage.</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h5 class="fw-semibold text-secondary mb-3">Preprocessing Notes</h5>
+          <ul class="text-muted fs-6">
+            <li>Images were resized to <strong>64×64 pixels</strong>.</li>
+            <li>Converted to <strong>RGB channels</strong> for uniformity.</li>
+            <li>Pixel values normalized to <strong>[0, 1]</strong> for stable CNN convergence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="text-center mb-5">
+    <h4 class="fw-bold text-secondary mb-3">Quick Links</h4>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://www.kaggle.com/datasets/apollo2506/eurosat-dataset" 
+         target="_blank" 
+         class="btn btn-outline-primary rounded-pill px-4 py-2 shadow-sm">
+         EuroSAT RGB on Kaggle
+      </a>
+      <a href="https://github.com/phelber/EuroSAT" 
+         target="_blank" 
+         class="btn btn-outline-success rounded-pill px-4 py-2 shadow-sm">
+         EuroSAT Repository (GitHub)
+      </a>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <a href="/notebooks" class="btn btn-outline-primary px-4 py-2 rounded-pill shadow-sm">
+      View Training Notebook
+    </a>
+  </div>
+
+  <footer class="text-center text-muted small mt-5">
+    © LandUseLab — Lightweight CNN • Input 64×64 • 10 Classes
+  </footer>
+</section>
+
+{% endblock %}

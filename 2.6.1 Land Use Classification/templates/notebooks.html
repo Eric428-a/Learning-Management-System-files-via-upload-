@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Notebook Viewer{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="page-title">Model Training & Evaluation Notebook</h2>
+  <p>This notebook shows the full workflow for training and evaluating the Land Use Classification model.</p>
+  
+  <div class="notebook-container">
+    {{ notebook_html | safe }}
+  </div>
+</div>
+
+<style>
+  .notebook-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  .notebook-container table {
+    border-collapse: collapse;
+  }
+  .notebook-container img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,6 @@
+/* Basic styles - expand as needed */
+body { background: #f7f9fb; color: #222; }
+.navbar-brand { font-weight: 700; }
+.card { border-radius: 10px; }
+footer { background: #111; color: #ddd; }
+.container img { max-width: 100%; }

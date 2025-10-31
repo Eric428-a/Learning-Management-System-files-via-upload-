@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}About Project{% endblock %}
+{% block content %}
+
+<section class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Land Use Lab</h1>
+    <p class="lead text-muted">Lightweight Land Use Classification using Keras CNN</p>
+  </div>
+
+  <div class="card shadow-lg border-0 rounded-4 mb-5">
+    <div class="card-body p-5">
+      <h4 class="fw-semibold text-secondary mb-4">About this Project</h4>
+      <p class="fs-5">
+        This project demonstrates a compact yet powerful <strong>Convolutional Neural Network (CNN)</strong> for land use classification.
+        Built with <strong>Keras</strong>, it uses only three convolutional blocks while maintaining impressive accuracy and efficiency.
+        The goal: <em>to make geospatial AI models lightweight enough to run anywhere</em> — even on limited hardware.
+      </p>
+
+      <hr class="my-4">
+
+      <h4 class="fw-semibold text-secondary mb-3">Model Metadata</h4>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush fs-6">
+            <li class="list-group-item"><strong>Model file:</strong> models/eurosat_cnn_model.joblib</li>
+            <li class="list-group-item"><strong>Model type:</strong> keras_object_joblib</li>
+            <li class="list-group-item"><strong>Input shape:</strong> (64, 64, 3)</li>
+            <li class="list-group-item"><strong>Output classes:</strong> 10</li>
+            <li class="list-group-item"><strong>File size:</strong> 7.88 MB</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush fs-6">
+            <li class="list-group-item"><strong>Architecture:</strong><br>
+              3 × (Conv2D → MaxPool)<br>
+              Flatten → Dense(128, ReLU) → Dropout(0.5) → Dense(10, Softmax)
+            </li>
+            <li class="list-group-item"><strong>Total parameters:</strong> ~2M<br>
+              <span class="text-muted">(Trainable: ~684K)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/notebook" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm">
+          View Training Notebook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center text-muted small">
+    © LandUseLab — Lightweight Keras CNN • Input 64×64 • 10 classes
+  </div>
+</section>
+
+{% endblock %}
